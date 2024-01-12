@@ -16,12 +16,12 @@ async function main(component) {
 
   // ヘッダーを取得
   const headers = [];
-  $('.wikitable tr').eq(1).find('td').each(function() {
+  $('.wikitable tr').eq(0).find('th').each(function() {
     headers.push($(this).text().trim());
   });
 
   // データ行を解析
-  $('.wikitable tr').slice(2).each(function() {
+  $('.wikitable tr').slice(1).each(function() {
     const row = {};
     $(this).find('td').each(function(index) {
       const header = headers[index];
@@ -29,7 +29,6 @@ async function main(component) {
     });
     fields.push(row);
   });
-
 
   // なんか一部IntroductionのTypoがあったのでこうなってる
   const descArray = []

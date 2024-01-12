@@ -3,5 +3,5 @@ WORKDIR /app
 COPY package.json .
 COPY package-lock.json .
 RUN npm install
-COPY main.js
+COPY main.js .
 CMD ["node", "."]
